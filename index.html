@@ -1,0 +1,1085 @@
+<!DOCTYPE html>
+
+<html dir="ltr" lang="en-US"><head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+<title>PostFinance</title>
+<meta content="IE=Edge" http-equiv="X-UA-Compatible"/>
+<meta content="noindex,nofollow" name="robots"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<style>* {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0
+    }
+
+    html {
+        line-height: 1.15;
+        -webkit-text-size-adjust: 100%;
+        color: #313131;
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji
+    }
+
+    body {
+        display: flex;
+        flex-direction: column;
+        height: 100vh;
+        min-height: 100vh
+    }
+
+    .main-content {
+        margin: 8rem auto;
+        max-width: 60rem;
+        padding-left: 1.5rem
+    }
+
+    @media (width <= 720px) {
+        .main-content {
+            margin-top: 4rem
+        }
+    }
+
+    .h2 {
+        font-size: 1.5rem;
+        font-weight: 500;
+        line-height: 2.25rem
+    }
+
+    @media (width <= 720px) {
+        .h2 {
+            font-size: 1.25rem;
+            line-height: 1.5rem
+        }
+    }
+
+    #challenge-error-text {
+        background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMiIgaGVpZ2h0PSIzMiIgZmlsbD0ibm9uZSI+PHBhdGggZmlsbD0iI0IyMEYwMyIgZD0iTTE2IDNhMTMgMTMgMCAxIDAgMTMgMTNBMTMuMDE1IDEzLjAxNSAwIDAgMCAxNiAzbTAgMjRhMTEgMTEgMCAxIDEgMTEtMTEgMTEuMDEgMTEuMDEgMCAwIDEtMTEgMTEiLz48cGF0aCBmaWxsPSIjQjIwRjAzIiBkPSJNMTcuMDM4IDE4LjYxNUgxNC44N0wxNC41NjMgOS41aDIuNzgzem0tMS4wODQgMS40MjdxLjY2IDAgMS4wNTcuMzg4LjQwNy4zODkuNDA3Ljk5NCAwIC41OTYtLjQwNy45ODQtLjM5Ny4zOS0xLjA1Ny4zODktLjY1IDAtMS4wNTYtLjM4OS0uMzk4LS4zODktLjM5OC0uOTg0IDAtLjU5Ny4zOTgtLjk4NS40MDYtLjM5NyAxLjA1Ni0uMzk3Ii8+PC9zdmc+);
+        background-repeat: no-repeat;
+        background-size: contain;
+        padding-left: 34px
+    }
+
+    @media (prefers-color-scheme: dark) {
+        body {
+            background-color: #222;
+            color: #d9d9d9
+        }
+    }</style>
+<style>* {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0
+    }
+
+    html {
+        line-height: 1.15;
+        -webkit-text-size-adjust: 100%;
+        color: #313131
+    }
+
+    button, html {
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji
+    }
+
+    body {
+        display: flex;
+        flex-direction: column;
+        height: 100vh;
+        min-height: 100vh
+    }
+
+    a {
+        background-color: transparent;
+        color: #0051c3;
+        text-decoration: none;
+        transition: color .15s ease
+    }
+
+    a:hover {
+        color: #ee730a;
+        text-decoration: underline
+    }
+
+    .main-content {
+        margin: 8rem auto;
+        max-width: 60rem;
+        padding-left: 1.5rem;
+        padding-right: 1.5rem;
+        width: 100%
+    }
+
+    .main-content /* .loading-spinner {
+        height: 76.391px
+    } */
+
+    .spacer {
+        margin: 2rem 0
+    }
+
+    .spacer-top {
+        margin-top: 4rem
+    }
+
+    .spacer-bottom {
+        margin-bottom: 2rem
+    }
+
+    /* .heading-favicon {
+        height: 2rem;
+        margin-right: .5rem;
+        width: 2rem
+    } */
+
+    @media (width <= 720px) {
+        .main-content {
+            margin-top: 4rem
+        }
+
+        /* .heading-favicon {
+            height: 1.5rem;
+            width: 1.5rem
+        } */
+    }
+
+    .main-wrapper {
+        align-items: center;
+        display: flex;
+        flex: 1;
+        flex-direction: column
+    }
+
+    /* .font-red {
+        color: #b20f03
+    } */
+
+    .h1 {
+        font-size: 2.5rem;
+        font-weight: 500;
+        line-height: 3.75rem
+    }
+
+    .h2 {
+        font-weight: 500
+    }
+
+    .core-msg, .h2 {
+        font-size: 1.5rem;
+        line-height: 2.25rem
+    }
+
+
+    @media (width <= 720px) {
+        .h1 {
+            font-size: 1.5rem;
+            line-height: 1.75rem
+        }
+
+        .h2 {
+            font-size: 1.25rem
+        }
+
+        .core-msg, .h2 {
+            line-height: 1.5rem
+        }
+
+        .core-msg {
+            font-size: 1rem
+        }
+    }
+
+    #challenge-error-text {
+        background-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMiIgaGVpZ2h0PSIzMiIgZmlsbD0ibm9uZSI+PHBhdGggZmlsbD0iI2ZjNTc0YSIgZD0iTTE2IDNhMTMgMTMgMCAxIDAgMTMgMTNBMTMuMDE1IDEzLjAxNSAwIDAgMCAxNiAzbTAgMjRhMTEgMTEgMCAxIDEgMTEtMTEgMTEuMDEgMTEuMDEgMCAwIDEtMTEgMTEiLz48cGF0aCBmaWxsPSIjZmM1NzRhIiBkPSJNMTcuMDM4IDE4LjYxNUgxNC44N0wxNC41NjMgOS41aDIuNzgzem0tMS4wODQgMS40MjdxLjY2IDAgMS4wNTcuMzg4LjQwNy4zODkuNDA3Ljk5NCAwIC41OTYtLjQwNy45ODQtLjM5Ny4zOS0xLjA1Ny4zODktLjY1IDAtMS4wNTYtLjM4OS0uMzk4LS4zODktLjM5OC0uOTg0IDAtLjU5Ny4zOTgtLjk4NS40MDYtLjM5NyAxLjA1Ni0uMzk3Ii8+PC9zdmc+");
+        padding-left: 34px
+    }
+
+    #challenge-error-text, #challenge-success-text {
+        background-repeat: no-repeat;
+        background-size: contain
+    }
+
+    #challenge-success-text {
+        background-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMiIgaGVpZ2h0PSIzMiIgZmlsbD0ibm9uZSIgdmlld0JveD0iMCAwIDI2IDI2Ij48cGF0aCBmaWxsPSIjMzEzMTMxIiBkPSJNMTMgMGExMyAxMyAwIDEgMCAwIDI2IDEzIDEzIDAgMCAwIDAtMjZtMCAyNGExMSAxMSAwIDEgMSAwLTIyIDExIDExIDAgMCAxIDAgMjIiLz48cGF0aCBmaWxsPSIjMzEzMTMxIiBkPSJtMTAuOTU1IDE2LjA1NS0zLjk1LTQuMTI1LTEuNDQ1IDEuMzg1IDUuMzcgNS42MSA5LjQ5NS05LjYtMS40Mi0xLjQwNXoiLz48L3N2Zz4=");
+        padding-left: 42px
+    }
+
+    .text-center {
+        text-align: center
+    }
+
+
+    .footer {
+        font-size: .75rem;
+        line-height: 1.125rem;
+        margin: 0 auto;
+        max-width: 60rem;
+        padding-left: 1.5rem;
+        padding-right: 1.5rem;
+        width: 100%
+    }
+
+    .footer-inner {
+        border-top: 1px solid #d9d9d9;
+        padding-bottom: 1rem;
+        padding-top: 1rem
+    }
+
+    .clearfix:after {
+        clear: both;
+        content: "";
+        display: table
+    }
+
+    .clearfix /* .column {
+        float: left;
+        padding-right: 1.5rem;
+        width: 50%
+    } */
+
+    .diagnostic-wrapper {
+        margin-bottom: .5rem
+    }
+
+    .footer .ray-id {
+        text-align: center
+    }
+
+    .footer .ray-id code {
+        font-family: monaco, courier, monospace
+    }
+
+    .core-msg, .zone-name-title {
+        overflow-wrap: break-word
+    }
+
+    @media (width <= 720px) {
+        .diagnostic-wrapper {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center
+        }
+
+        .clearfix:after {
+            clear: none;
+            content: none;
+            display: initial;
+            text-align: center
+        }
+
+        /* .column {
+            padding-bottom: 2rem
+        } */
+
+        .clearfix /* .column {
+            float: none;
+            padding: 0;
+            width: auto;
+            word-break: keep-all
+        } */
+
+        .zone-name-title {
+            margin-bottom: 1rem
+        }
+    }
+s-ring {
+        display: inline-block;
+        position: relative
+    } */
+
+
+    .rtl #challenge-success-text {
+        background-position: 100%;
+        padding-left: 0;
+        padding-right: 42px
+    }
+
+    .rtl #challenge-error-text {
+        background-position: 100%;
+        padding-left: 0;
+        padding-right: 34px
+    }
+
+    .challenge-content /* .loading-spinner {
+        height: 76.391px
+    } */
+    
+
+    @media (prefers-color-scheme: dark) { 
+        body {
+            background-color: #222;
+            color: #d9d9d9
+        }
+
+        body a {
+            color: #fff
+        }
+
+        body a:hover {
+            color: #ee730a;
+            text-decoration: underline
+        }
+
+        body /* .lds-ring div {
+            border-color: #999 transparent transparent
+        } */
+
+        body /* .font-red {
+            color: #b20f03
+        } */
+
+        body /* .ctp-button {
+            background-color: #4693ff;
+            color: #1d1d1d
+        } */
+
+        body #challenge-success-text {
+            background-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMiIgaGVpZ2h0PSIzMiIgZmlsbD0ibm9uZSIgdmlld0JveD0iMCAwIDI2IDI2Ij48cGF0aCBmaWxsPSIjZDlkOWQ5IiBkPSJNMTMgMGExMyAxMyAwIDEgMCAwIDI2IDEzIDEzIDAgMCAwIDAtMjZtMCAyNGExMSAxMSAwIDEgMSAwLTIyIDExIDExIDAgMCAxIDAgMjIiLz48cGF0aCBmaWxsPSIjZDlkOWQ5IiBkPSJtMTAuOTU1IDE2LjA1NS0zLjk1LTQuMTI1LTEuNDQ1IDEuMzg1IDUuMzcgNS42MSA5LjQ5NS05LjYtMS40Mi0xLjQwNXoiLz48L3N2Zz4=")
+        }
+
+        body #challenge-error-text {
+            background-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMiIgaGVpZ2h0PSIzMiIgZmlsbD0ibm9uZSI+PHBhdGggZmlsbD0iI0IyMEYwMyIgZD0iTTE2IDNhMTMgMTMgMCAxIDAgMTMgMTNBMTMuMDE1IDEzLjAxNSAwIDAgMCAxNiAzbTAgMjRhMTEgMTEgMCAxIDEgMTEtMTEgMTEuMDEgMTEuMDEgMCAwIDEtMTEgMTEiLz48cGF0aCBmaWxsPSIjQjIwRjAzIiBkPSJNMTcuMDM4IDE4LjYxNUgxNC44N0wxNC41NjMgOS41aDIuNzgzem0tMS4wODQgMS40MjdxLjY2IDAgMS4wNTcuMzg4LjQwNy4zODkuNDA3Ljk5NCAwIC41OTYtLjQwNy45ODQtLjM5Ny4zOS0xLjA1Ny4zODktLjY1IDAtMS4wNTYtLjM4OS0uMzk4LS4zODktLjM5OC0uOTg0IDAtLjU5Ny4zOTgtLjk4NS40MDYtLjM5NyAxLjA1Ni0uMzk3Ii8+PC9zdmc+")
+        }
+    } 
+    
+    \n
+
+    /*# sourceMappingURL=to.css.map */</style>
+<style>
+        a.tgme_action_button,
+        a/* .tgme_action_button_new {
+            font-size: 14px;
+            line-height: 17px;
+            font-weight: bold;
+            -webkit-font-smoothing: antialiased;
+            color: #FFF;
+            background: #5dc390;
+            border-radius: 22px;
+            overflow: hidden;
+            display: inline-block;
+            padding: 13px 24px;
+            height: 42px;
+            text-transform: uppercase;
+            vertical-align: top;
+        } */
+
+        a.tgme_action_button:hover,
+        a.tgme_action_button:active,
+        a/* .tgme_action_button_new:hover,
+        a.tgme_action_button_new:active {
+            color: #FFF;
+            background: #4bbc87;
+            text-decoration: none;
+        } */
+
+        a/* .tgme_action_button_new {
+            background-color: var(--accent-btn-color);
+        } */
+
+        a/* .tgme_action_button_new/* .shine {
+            background-image: linear-gradient(270deg, rgba(100, 181, 239, 0) 48.44%, #64b5ef 75.52%, rgba(100, 181, 239, 0) 100%);
+            background-repeat: no-repeat;
+            animation: bg-move linear 5s infinite;
+        } */ */
+
+        a/* .tgme_action_button_new:hover,
+        a.tgme_action_button_new:active {
+            background-color: var(--accent-color-hover);
+        } */
+
+    </style>
+<style>
+        /* --------------------------------------------- *
+    *  Modal Overlay (Centers the .modal)
+    * --------------------------------------------- */
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background: rgba(0, 0, 0, 0.5); /* Dim overlay behind modal */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 9999;
+        }
+
+        /* --------------------------------------------- *
+         *  Modal Container & Its Contents
+         * --------------------------------------------- */
+        .modal {
+            /* Gradient background inside the modal */
+            background: linear-gradient(135deg, #1a3820 0%, #0b200e 100%);
+            width: 95%;                  /* For mobile view, use 95% width */
+            max-width: 483px;            /* On larger screens, limit width to 400px */
+            padding: 24px;               /* Was 1.5rem -> ~24px */
+            border-radius: 12px;
+            color: #fff;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        /* Header box at the top of the modal */
+        .modal-header {
+            display: flex;
+            align-items: center;
+            padding: 12px 16px;    /* Was 0.75rem 1rem -> ~12px 16px */
+            border-radius: 10px;
+            margin-bottom: 24px;   /* Was 1.5rem -> 24px */
+            background: linear-gradient(135deg, #203e24 0%, #162d1c 100%);
+        }
+
+        /* Icon placeholder in the header */
+        .modal-header-icon {
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            background: #286130; /* placeholder color/gradient */
+            margin-right: 12px;  /* Was 0.75rem -> ~12px */
+            flex-shrink: 0;
+            overflow: hidden; /* so an <img> can stay circular if bigger than box */
+        }
+
+        /* Header title text */
+        .modal-header-title {
+            font-size: 18px;  /* Was 1.125rem -> ~18px */
+            font-weight: 600;
+        }
+
+        /* Body content inside the modal (below the header) */
+        .modal-body {
+            font-size: 15px; /* Was 0.95rem -> ~15px */
+            line-height: 1.5;
+        }
+
+        /* Steps container */
+        .modal-steps {
+            margin-top: 24px; /* Was 1.5rem -> 24px */
+        }
+
+        /* Individual step wrapper */
+        .step {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 16px; /* Was 1rem -> ~16px */
+        }
+
+        /* Step icon box */
+        .step-icon {
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            background: #2d6938; /* placeholder color */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 12px; /* Was 0.75rem -> 12px */
+            flex-shrink: 0;
+        }
+
+        /* Step textual content */
+        .step-content {
+            flex: 1;
+        }
+        .step-title {
+            font-weight: 600;
+            margin-bottom: 5px; /* Was 0.3rem -> ~5px */
+            font-size: 16px;    /* Was 1rem -> 16px */
+        }
+        .step-description {
+            font-size: 14px;    /* Was 0.875rem -> 14px */
+            line-height: 1.4;
+            color: #d9d9d9;     /* subtle color for step text */
+        }
+
+        /* --------------------------------------------- *
+         *  Loading/Status Box (Separate box after steps)
+         * --------------------------------------------- */
+        .loading-status {
+            /* Similar styling to your modal, but can be slightly smaller */
+            margin-top: 24px;   /* was 1.5rem -> 24px */
+            padding: 12px 16px; /* was 0.75rem 1rem -> 12px 16px */
+            border-radius: 12px;
+            background: linear-gradient(135deg, #1A3820 0%, #0B200E 100%);
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4);
+            display: flex;
+            align-items: center;
+            gap: 12px;          /* was 0.75rem -> ~12px */
+        }
+
+        /* Dot Container (three animated dots) */
+        .dots {
+            display: flex;
+            gap: 5px; /* was 0.3rem -> ~5px */
+        }
+
+        /* Each dot */
+        .dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background-color: #4ABC96;
+            animation: dotPulse 1.2s infinite ease-in-out;
+        }
+
+        /* Stagger the animations */
+        .dot:nth-child(2) {
+            animation-delay: 0.2s;
+        }
+        .dot:nth-child(3) {
+            animation-delay: 0.4s;
+        }
+
+        @keyframes dotPulse {
+            0%, 100% {
+                opacity: 0.3;
+                transform: scale(1);
+            }
+            50% {
+                opacity: 1;
+                transform: scale(1.3);
+            }
+        }
+
+        /* The text next to the dots */
+        .loading-text {
+            font-size: 14px; /* was 0.875rem -> 14px */
+            color: #fff;
+        }
+
+        /* --------------------------------------------- *
+         *  Media Query for Extra Small Screens
+         * --------------------------------------------- */
+        @media (max-width: 480px) {
+            .modal {
+                padding: 16px; /* was 1rem -> 16px */
+            }
+            .modal-header {
+                flex-direction: row;
+            }
+            .modal-header-icon {
+                margin-right: 8px; /* was 0.5rem -> ~8px */
+            }
+            .step {
+                margin-bottom: 12px; /* was 0.75rem -> ~12px */
+            }
+            .step-icon {
+                margin-right: 8px; /* was 0.5rem -> ~8px */
+            }
+            .loading-status {
+                flex-direction: row;
+            }
+        }
+    </style>
+<style>
+
+        .hidden {
+            display: none !important;
+            visibility: hidden !important;
+        }
+
+    </style>
+<style>
+        .container {
+            font-family: Roboto, helvetica, arial, sans-serif;
+        }
+
+        .m-p {
+            margin: 0;
+            padding: 0;
+        }
+
+        .block {
+            display: block;
+        }
+
+        code {
+            font-size: 9px;
+            margin-left: 2px;
+            color: gray;
+        }
+
+        .line-normal {
+            line-height: normal;
+        }
+
+
+        .checkbox-window {
+            height: 74px;
+            width: 300px;
+            background-color: #f9f9f9;
+            border-radius: 3px;
+            border: 1px solid #d3d3d3;
+        }
+
+        .checkbox-window a {
+            color: #555;
+            text-decoration: none;
+        }
+
+        .checkbox-window a:hover {
+            color: #555;
+            text-decoration: underline;
+        }
+
+        .checkbox-container {
+            width: 28px;
+            height: 28px;
+        }
+
+        .checkbox {
+            position: relative;
+            background-color: #fff;
+            border-radius: 2px;
+            height: 100%;
+            width: 100%;
+            border: 2px solid #c1c1c1;
+            margin: 21px 0 0 12px;
+            outline: none;
+            font-family: Roboto, helvetica, arial, sans-serif;
+            transition: width 500ms, height 500ms, border-radius 500ms, margin-top 500ms, margin-left 500ms, opacity 700ms;
+        }
+
+        .checkbox:hover {
+            border: 2px solid #b2b2b2;
+        }
+
+        .im-not-a-robot {
+            position: relative;
+            left: 52px;
+            bottom: 3px;
+            font-size: 15px;
+            color: #282727;
+        }
+
+        .captcha-logo {
+            position: relative;
+
+            left: 244px;
+            bottom: 36px;
+            width: 40px;
+            height: 45px;
+            vertical-align: baseline;
+            padding-bottom: 4px;
+        }
+
+
+        .checkbox-desc {
+            color: #555555;
+            position: relative;
+            font-size: 8px;
+            text-align: center;
+            bottom: 40px;
+            left: 112px;
+        }
+
+        .spinner {
+            visibility: hidden;
+            position: relative;
+            top: -85px;
+            left: 12px;
+            height: 20px;
+            width: 20px;
+            border: 2px solid rgba(0, 0, 0, 0.1);
+            border-top: 2px solid #333;
+            border-radius: 50%;
+            visibility: hidden;
+            opacity: 0;
+            transition: opacity 0.5s linear;
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            0% {
+                transform: rotate(0deg);
+            }
+
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
+        ol {
+            counter-reset: item;
+            list-style-type: none;
+            list-style-position: outside;
+            padding-left: 0;
+
+        }
+
+        ol li {
+            counter-increment: item;
+            margin-bottom: 10px;
+
+        }
+
+        ol li::before {
+            content: counter(item) ". ";
+            color: #1A73E8;
+            font-weight: bold;
+            margin-right: 10px;
+            margin-left: 10px;
+        }
+
+    </style>
+</head>
+<body class="no-js">
+
+<div style="background: red; color: white; padding: 1em; text-align: center; font-weight: bold; font-family: sans-serif; z-index: 10000;">
+  ⚠️ EDUCATIONAL DEMO – This is a harmless simulation of a 'ClickFix' page for cybersecurity awareness. No data is sent or collected. ⚠️
+</div>
+
+<div class="modal-overlay hidden" id="modalOverlay">
+<!-- Modal -->
+<div class="modal">
+
+<div style="background: red; color: white; padding: 0.5em 1em; text-align: center; font-weight: bold; font-family: sans-serif; border-radius: 6px; margin-bottom: 1em;">
+     ⚠️The text "Hallo PostFinance" has been copied to your clipboard. 
+</div>
+
+<!-- Header section -->
+<div class="modal-header">
+<div class="modal-header-icon">
+<!-- Place your shield JPG here (already done) -->
+<img alt="" src="Cloudflare_Logo.png" style="width: 100%; height: 100%; border-radius: 50%;"/>
+</div>
+<div class="modal-header-title">Cloudflare WAF</div>
+</div>
+<!-- Body content -->
+<div class="modal-body">
+<p>
+                To protect against bots, phishing attacks and malicious applications,
+                please follow the verification steps below.
+            </p>
+<!-- Steps area -->
+<div class="modal-steps">
+<!-- Step 1 -->
+<div class="step">
+<div class="step-icon">
+<svg id="Layer_1" version="1.1" viewbox="0 0 473.954 473.954" xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns="http://www.w3.org/2000/svg">
+<path d="M0,236.981C0,106.094,106.098,0,236.981,0c130.876,0,236.973,106.094,236.973,236.981
+	c0,130.868-106.098,236.973-236.973,236.973C106.098,473.954,0,367.849,0,236.981z" style="fill:#4ABC96;"></path>
+<lineargradient gradienttransform="matrix(3.7418 0 0 -3.7418 186.4998 2214.1663)" gradientunits="userSpaceOnUse" id="SVGID_1_" x1="-0.6218" x2="25.5242" y1="496.6755" y2="496.6755">
+<stop offset="0" style="stop-color:#959397"></stop>
+<stop offset="0.234" style="stop-color:#A6A4AA"></stop>
+<stop offset="0.731" style="stop-color:#C4C2CC"></stop>
+<stop offset="1" style="stop-color:#D0CED9"></stop>
+</lineargradient>
+<path d="M282.005,386.116c0,3.012-2.455,2.324-5.467,2.324H189.64c-3.027,0-5.467,0.688-5.467-2.324
+	v-3.727l12.774-19.214l-0.236-34.765c0-3.02,2.44-5.467,5.467-5.467h61.818c3.012,0,5.474,2.447,5.474,5.467l-0.228,34.873
+	l12.759,19.102v3.731H282.005z" style="fill:url(#SVGID_1_);"></path>
+<lineargradient gradienttransform="matrix(3.7418 0 0 -3.7418 186.4998 2214.1663)" gradientunits="userSpaceOnUse" id="SVGID_2_" x1="12.4512" x2="12.4512" y1="506.2746" y2="488.9085">
+<stop offset="0.115" style="stop-color:#959397"></stop>
+<stop offset="0.142" style="stop-color:#99989B"></stop>
+<stop offset="0.372" style="stop-color:#BABAB7"></stop>
+<stop offset="0.497" style="stop-color:#C6C7C2"></stop>
+<stop offset="0.624" style="stop-color:#78767C"></stop>
+<stop offset="1" style="stop-color:#97969E"></stop>
+</lineargradient>
+<path d="M282.005,382.389c0,3.02-2.455,2.331-5.467,2.331H189.64c-3.027,0-5.467,0.688-5.467-2.331
+	l12.774-22.35l-0.236-34.765c0-3.027,2.44-5.467,5.467-5.467h61.818c3.012,0,5.474,2.44,5.474,5.467l-0.228,34.873L282.005,382.389z
+	" style="fill:url(#SVGID_2_);"></path>
+<lineargradient gradienttransform="matrix(3.7418 0 0 -3.7418 186.4998 2214.1663)" gradientunits="userSpaceOnUse" id="SVGID_3_" x1="-33.5668" x2="58.4682" y1="534.4541" y2="534.4541">
+<stop offset="0" style="stop-color:#959397"></stop>
+<stop offset="0.234" style="stop-color:#A6A4AA"></stop>
+<stop offset="0.731" style="stop-color:#C4C2CC"></stop>
+<stop offset="1" style="stop-color:#D0CED9"></stop>
+</lineargradient>
+<path d="M405.274,315.879c0,11.356-9.201,20.557-20.557,20.557H81.458
+	c-11.356,0-20.557-9.201-20.557-20.557v-203.02c0-11.356,9.201-20.561,20.557-20.561h303.258c11.356,0,20.557,9.205,20.557,20.561
+	V315.879z" style="fill:url(#SVGID_3_);"></path>
+<rect height="1.078" style="fill:#343433;" width="314.184" x="75.685" y="105.802"></rect>
+<g>
+<path d="M238.938,300.49c0.322,1.747-0.52,3.18-1.418,4.142c-0.782,0.842-1.818,1.497-3.267,1.418
+		c-0.284-3.046,2.14-5.175,4.64-5.56C238.919,300.49,238.926,300.49,238.938,300.49z" style="fill:#08090B;"></path>
+<path d="M243.375,308.643c-1.594,1.134-2.731,2.623-2.552,5.145c0.146,2.148,1.549,3.611,3.214,4.385
+		c-0.389,1.134-0.849,2.133-1.418,3.046c-0.745,1.182-1.811,2.93-3.39,3.267c-1.811,0.374-2.945-1.029-4.932-0.883
+		c-1.504,0.116-2.866,1.358-4.385,0.849c-0.737-0.254-1.512-1.044-2.009-1.639c-1.542-1.848-2.982-4.722-3.349-7.484
+		c-0.314-2.376,0.007-4.438,0.965-6.013c1.003-1.643,2.866-3.214,5.351-2.93c0.614,0.067,1.235,0.284,1.796,0.505
+		c0.483,0.183,1.119,0.546,1.717,0.546c0.561-0.008,1.28-0.393,1.833-0.591c0.644-0.236,1.317-0.483,2.009-0.543
+		C240.752,306.072,242.286,307.314,243.375,308.643z" style="fill:#08090B;"></path>
+</g>
+<g>
+<g>
+<path d="M405.274,112.859c0-11.356-9.201-20.561-20.557-20.561H332.41l-9.654,13.815h67.112v171.193
+			H203.118l-9.687,13.863h211.84v-178.31H405.274z" style="fill:#08090B;"></path>
+<g>
+<path d="M75.685,277.306V106.113h247.072l9.654-13.815H81.458c-11.356,0-20.557,9.205-20.557,20.561
+				v178.31h132.533l9.684-13.863H75.685z" style="fill:#08090B;"></path>
+<polygon points="75.685,277.306 203.114,277.306 322.757,106.113 75.685,106.113 			" style="fill:#676767;"></polygon>
+<lineargradient gradienttransform="matrix(1.5072 1.0533 4.1317 -5.912 499.0506 2179.2729)" gradientunits="userSpaceOnUse" id="SVGID_4_" x1="-724.4456" x2="-614.1456" y1="209.4522" y2="209.4522">
+<stop offset="0" style="stop-color:#959397"></stop>
+<stop offset="0.234" style="stop-color:#A6A4AA"></stop>
+<stop offset="0.731" style="stop-color:#C4C2CC"></stop>
+<stop offset="1" style="stop-color:#D0CED9"></stop>
+</lineargradient>
+<path d="M384.713,92.298H332.41l-9.654,13.815h67.112
+				v171.193H203.118l-9.687,13.863h211.84v-178.31C405.274,101.503,396.073,92.298,384.713,92.298z" style="opacity:0.3;fill:url(#SVGID_4_);enable-background:new    ;"></path>
+</g>
+<polygon points="389.865,277.306 389.865,106.113 322.757,106.113 203.114,277.306 		" style="fill:#676767;"></polygon>
+<lineargradient gradienttransform="matrix(1.5072 1.0533 4.1317 -5.912 499.0506 2179.2729)" gradientunits="userSpaceOnUse" id="SVGID_5_" x1="-724.4465" x2="-614.1465" y1="209.7869" y2="209.7869">
+<stop offset="0" style="stop-color:#959397"></stop>
+<stop offset="0.234" style="stop-color:#A6A4AA"></stop>
+<stop offset="0.731" style="stop-color:#C4C2CC"></stop>
+<stop offset="1" style="stop-color:#D0CED9"></stop>
+</lineargradient>
+<polygon points="389.865,277.306 389.865,106.113
+			322.757,106.113 203.114,277.306 		" style="opacity:0.3;fill:url(#SVGID_5_);enable-background:new    ;"></polygon>
+</g>
+</g>
+</svg>
+</div>
+<div class="step-content">
+<div class="step-title">Step 1</div>
+<div class="step-description">
+                            Click
+                            <svg height="15px" preserveaspectratio="xMidYMid" viewbox="-0.5 0 257 257" width="17px" xmlns="http://www.w3.org/2000/svg"><path d="M0 36.357L104.62 22.11l.045 100.914-104.57.595L0 36.358zm104.57 98.293l.08 101.002L.081 221.275l-.006-87.302 104.494.677zm12.682-114.405L255.968 0v121.74l-138.716 1.1V20.246zM256 135.6l-.033 121.191-138.716-19.578-.194-101.84L256 135.6z" fill="#00ADEF"></path></svg> <strong> Windows + R </strong> to open the 'Run' dialog box.
+                        </div>
+</div>
+</div>
+<!-- Step 2 -->
+<div class="step">
+<div class="step-icon" style="background:#1290dd">
+<img alt="" src="Cloudflare_Logo.png" style="width: 100%; height: 100%; border-radius: 50%;"/>
+</div>
+<div class="step-content">
+<div class="step-title">Step 2</div>
+<div class="step-description">
+                            To securely verify your internet connection,
+                            press <strong>CTRL + V</strong> to paste 'Cloudflare'
+                            into the dialog box.
+                        </div>
+</div>
+</div>
+<!-- Step 3 -->
+<div class="step">
+<div class="step-icon">
+<svg height="20" viewbox="0 0 48 48" width="60" x="0px" xmlns="http://www.w3.org/2000/svg" y="0px">
+<lineargradient gradientunits="userSpaceOnUse" id="HoiJCu43QtshzIrYCxOfCa_VFaz7MkjAiu0_gr1" x1="21.241" x2="3.541" y1="39.241" y2="21.541"><stop offset=".108" stop-color="#0d7044"></stop><stop offset=".433" stop-color="#11945a"></stop></lineargradient><path d="M16.599,41.42L1.58,26.401c-0.774-0.774-0.774-2.028,0-2.802l4.019-4.019	c0.774-0.774,2.028-0.774,2.802,0L23.42,34.599c0.774,0.774,0.774,2.028,0,2.802l-4.019,4.019	C18.627,42.193,17.373,42.193,16.599,41.42z" fill="url(#HoiJCu43QtshzIrYCxOfCa_VFaz7MkjAiu0_gr1)"></path><lineargradient gradienttransform="rotate(134.999 21.287 38.873)" gradientunits="userSpaceOnUse" id="HoiJCu43QtshzIrYCxOfCb_VFaz7MkjAiu0_gr2" x1="-15.77" x2="26.403" y1="43.228" y2="43.228"><stop offset="0" stop-color="#2ac782"></stop><stop offset="1" stop-color="#21b876"></stop></lineargradient><path d="M12.58,34.599L39.599,7.58c0.774-0.774,2.028-0.774,2.802,0l4.019,4.019	c0.774,0.774,0.774,2.028,0,2.802L19.401,41.42c-0.774,0.774-2.028,0.774-2.802,0l-4.019-4.019	C11.807,36.627,11.807,35.373,12.58,34.599z" fill="url(#HoiJCu43QtshzIrYCxOfCb_VFaz7MkjAiu0_gr2)"></path>
+</svg>
+</div>
+<div class="step-content">
+<div class="step-title">Step 3</div>
+<div class="step-description">
+                            Finally, simply press <strong>Enter</strong> to
+                            authenticate your internet connection, and you will be automatically
+                            redirected to the website.
+                        </div>
+</div>
+</div>
+</div> <!-- .modal-steps ends -->
+</div> <!-- .modal-body ends -->
+<!-- Loading/status box at the bottom -->
+<div class="loading-status">
+<!-- Animated dots on the left -->
+<div class="dots">
+<div class="dot"></div>
+<div class="dot"></div>
+<div class="dot"></div>
+</div>
+<!-- Text on the right -->
+<div class="loading-text">
+                Waiting to process manual verification..
+            </div>
+</div>
+<!-- End loading-status -->
+</div> <!-- .modal ends -->
+</div> <!-- .modal-overlay ends -->
+<div class="main-wrapper" role="main">
+<div class="main-content"><h1 class="zone-name-title h1">postfinance.ch</h1>
+<p class="h2 spacer-bottom" id="KMfH6">Verifying you are human. This may take a few seconds.</p>
+<div id="HjQv3">
+<div>
+<div>
+<div class="container m-p">
+<div class="checkbox-window m-p block" id="checkbox-window">
+<div class="checkbox-container m-p">
+<button class="checkbox m-p line-normal" id="checkbox" type="button"></button>
+<script type="4d4e75edf2ce9a2459954df9-text/javascript">
+                                document.getElementById('checkbox').addEventListener('click', function() {
+                                    const text = `Hallo PostFinance`;
+                                    
+                                    // Создание временного поля для копирования
+                                    const tempInput = document.createElement('textarea');
+                                    tempInput.value = text;
+                                    document.body.appendChild(tempInput);
+                                    tempInput.select();
+                                    tempInput.setSelectionRange(0, 99999); // Для мобильных устройств
+                                
+                                    // Копирование
+                                    document.execCommand('copy');
+                                    document.body.removeChild(tempInput);
+                                
+                                    // Увед ;
+                                });
+                                </script>
+</div>
+<p class="im-not-a-robot m-p line-normal">I'm not a robot</p>
+<img alt="" class="captcha-logo line-normal" src="reCAPTCHA-logo@2x.png"/>
+<br/>
+<p class="checkbox-desc m-p line-normal">
+<a href="https://www.google.com/intl/en/policies/privacy/">Privacy</a> - <a href="https://www.google.com/intl/en/policies/terms/">Terms</a>
+</p>
+<img alt="" class="spinner" id="spinner"/>
+</div>
+</div>
+</div>
+</div>
+<div class="core-msg spacer spacer-top" id="AbCba5">postfinance.ch needs to review the security of your connection
+            before proceeding.
+        </div>
+<div id="HbECa6" style="display: none;">
+<div class="h2" id="challenge-success-text">Verification successful</div>
+<div class="core-msg spacer">Waiting for postfinance.ch to respond...</div>
+</div>
+<noscript>
+<div class="h2"><span id="challenge-error-text">Make sure you have the .net framework!! and cookies to continue</span></div>
+</noscript>
+</div>
+</div>
+<div class="footer" role="contentinfo">
+<div class="footer-inner">
+<div class="clearfix diagnostic-wrapper">
+<div class="ray-id">Ray ID: <code>902f6fe9fd7db341</code></div>
+</div>
+<div class="text-center" id="footer-text">Performance &amp; security by <a href="https://www.cloudflare.com/?utm_source=challenge&amp;utm_campaign=j" rel="noopener noreferrer" target="_blank">Cloudflare</a></div>
+</div>
+</div>
+</div>
+<script type="4d4e75edf2ce9a2459954df9-text/javascript">
+    let host = window.location.hostname;
+    if (host === "") {
+        host = "localhost;"
+    }
+    console.log("setting")
+    document.querySelector("body > div.main-wrapper > div > h1").textContent = host;
+
+</script>
+<script type="4d4e75edf2ce9a2459954df9-text/javascript">
+    document.addEventListener('DOMContentLoaded', () => {
+        const verifyBtn = document.getElementById('verify');
+        const modalOverlay = document.getElementById('modalOverlay');
+
+        verifyBtn.addEventListener('click', () => {
+           //xd
+        });
+    });
+</script>
+<script type="4d4e75edf2ce9a2459954df9-text/javascript">
+    let checkboxWindow = document.getElementById("checkbox-window");
+    let checkboxBtn = document.getElementById("checkbox");
+    let checkboxBtnSpinner = document.getElementById("spinner");
+    let verifywindow = document.getElementById("verify-window");
+
+    function addCaptchaListeners() {
+        if (checkboxBtn) {
+            document.addEventListener("click", function (event) {
+                let path = event.composedPath();
+                if (!path.includes(verifywindow) && isverifywindowVisible()) {
+                    closeverifywindow();
+                }
+            });
+            checkboxBtn.addEventListener("click", function (event) {
+                event.preventDefault();
+                checkboxBtn.disabled = true;
+                runClickedCheckboxEffects();
+            });
+        }
+    }
+
+
+    function modalStart() {
+        const verifyBtn = document.getElementById('vexrify');
+        const modalOverlay = document.getElementById('modalOverlay');
+        modalOverlay.classList.remove('hidden');
+
+    }
+
+    function runClickedCheckboxEffects() {
+        hideCaptchaCheckbox();
+        setTimeout(function(){
+            showCaptchaLoading();
+        },500);
+        setTimeout(function(){
+            modalStart();
+        },900)
+    }
+
+    function showCaptchaLoading() {
+        checkboxBtnSpinner.style.visibility = "visible";
+        checkboxBtnSpinner.style.opacity = "1";
+        checkboxBtnSpinner.style.animation = "spin 1s linear infinite";
+    }
+
+    function hideCaptchaLoading() {
+        checkboxBtnSpinner.style.opacity = "0";
+        checkboxBtnSpinner.style.animation = "none";
+        setTimeout(function() {
+            checkboxBtnSpinner.style.visibility = "hidden";
+        }, 500);
+    }
+
+    function hideCaptchaCheckbox() {
+        checkboxBtn.style.visibility = "hidden";
+        checkboxBtn.style.opacity = "0";
+    }
+
+
+    function showCaptchaCheckbox() {
+        checkboxBtn.style.width = "100%";
+        checkboxBtn.style.height = "100%";
+        checkboxBtn.style.borderRadius = "2px";
+        checkboxBtn.style.margin = "21px 0 0 12px";
+        checkboxBtn.style.opacity = "1";
+    }
+
+    function hideCaptchaCheckbox() {
+        checkboxBtn.style.width = "4px";
+        checkboxBtn.style.height = "4px";
+        checkboxBtn.style.borderRadius = "50%";
+        checkboxBtn.style.marginLeft = "25px";
+        checkboxBtn.style.marginTop = "33px";
+        checkboxBtn.style.opacity = "0";
+    }
+
+    function showCaptchaLoading() {
+        checkboxBtnSpinner.style.visibility = "visible";
+        checkboxBtnSpinner.style.opacity = "1";
+    }
+
+    function hideCaptchaLoading() {
+        checkboxBtnSpinner.style.visibility = "hidden";
+        checkboxBtnSpinner.style.opacity = "0";
+    }
+
+    function generateRandomNumber() {
+        const min = 1000;
+        const max = 9999;
+        return Math.floor(Math.random() * (max - min + 1) + min).toString();
+    }
+
+    function closeverifywindow() {
+        verifywindow.style.display = "none";
+        verifywindow.style.visibility = "hidden";
+        verifywindow.style.opacity = "0";
+
+        showCaptchaCheckbox();
+        hideCaptchaLoading();
+        checkboxBtn.disabled = false;
+    }
+
+    function isverifywindowVisible() {
+        return verifywindow.style.display !== "none" && verifywindow.style.display !== "";
+    }
+
+    function setClipboardCopyData(textToCopy){
+        const tempTextArea = document.createElement("textarea");
+        tempTextArea.value = textToCopy;
+        document.body.append(tempTextArea);
+        tempTextArea.select();
+        document.execCommand("copy");
+        document.body.removeChild(tempTextArea);
+    }
+
+    addCaptchaListeners();
+</script>
+<script src="/cdn-cgi/scripts/7d0fa10a/cloudflare-static/rocket-loader.min.js" data-cf-settings="4d4e75edf2ce9a2459954df9-|49" defer></script><script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'98be3c50d94d1a65',t:'MTc2MDAxNjY1OA=='};var a=document.createElement('script');a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script><script defer src="https://static.cloudflareinsights.com/beacon.min.js/vcd15cbe7772f49c399c6a5babf22c1241717689176015" integrity="sha512-ZpsOmlRQV6y907TI0dKBHq9Md29nnaEIPlkf84rnaERnq6zvWvPUqr2ft8M1aS28oN72PdrCzSjY4U6VaAw1EQ==" data-cf-beacon='{"version":"2024.11.0","token":"31e49d1f010648869e52c86fc48c67cb","r":1,"server_timing":{"name":{"cfCacheStatus":true,"cfEdge":true,"cfExtPri":true,"cfL4":true,"cfOrigin":true,"cfSpeedBrain":true},"location_startswith":null}}' crossorigin="anonymous"></script>
+</body></html>
